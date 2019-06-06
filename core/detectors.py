@@ -2,6 +2,18 @@ from .base import Base, load_cfg, load_nnet
 from .paths import get_file_path
 from .config import SystemConfig
 from .dbs.coco import COCO
+from .dbs.retail import RETAIL
+class RetailNet(Base):
+    def __init__(self):
+        from .test.retail_net import retail_inference
+        from .models.retail import model
+        cfg_path = get_file_path("..","configs","retail.json")
+        model_path = "/home/myu/retail_project/CornerNet-Lite/cache/nnet/retail/retail_60000.pkl"
+        cfg_sys, cfg_db = load_cfg(cfg_path)
+        sys_cfg = SystemConfig().update_config(cfg_sys)
+        retail    = RETAIL(cfg_db)
+        cornernet = load_nnet(sys_cfg, model())
+        super(RetailNet, self).__init__(retail, cornernet, retail_inference, model=model_path)
 
 class CornerNet(Base):
     def __init__(self):

@@ -7,7 +7,7 @@ class DETECTION(BASE):
         super(DETECTION, self).__init__()
 
         # Configs for training
-        self._configs["categories"]      = 80
+        self._configs["categories"]      = 200
         self._configs["rand_scales"]     = [1]
         self._configs["rand_scale_min"]  = 0.8
         self._configs["rand_scale_max"]  = 1.4

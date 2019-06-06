@@ -19,6 +19,7 @@ class SystemConfig(object):
         self._configs["snapshot_name"]     = None
         self._configs["prefetch_size"]     = 100
         self._configs["pretrain"]          = None
+        self._configs["start_iter"]        = 0
         self._configs["opt_algo"]          = "adam"
         self._configs["chunk_sizes"]       = None
 
@@ -80,6 +81,10 @@ class SystemConfig(object):
     @property
     def pretrain(self):
         return self._configs["pretrain"]
+
+    @property
+    def start_iter(self):
+        return self._configs["start_iter"]
 
     @property
     def result_dir(self):

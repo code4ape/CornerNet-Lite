@@ -88,7 +88,7 @@ def terminate_tasks(tasks):
 
 def train(training_dbs, validation_db, system_config, model, args):
     # reading arguments from command
-    start_iter  = args.start_iter
+    #start_iter  = args.start_iter
     distributed = args.distributed
     world_size  = args.world_size
     initialize  = args.initialize
@@ -100,6 +100,9 @@ def train(training_dbs, validation_db, system_config, model, args):
     learning_rate    = system_config.learning_rate
     max_iteration    = system_config.max_iter
     pretrained_model = system_config.pretrain
+
+    start_iter       = system_config.start_iter
+
     stepsize         = system_config.stepsize
     snapshot         = system_config.snapshot
     val_iter         = system_config.val_iter

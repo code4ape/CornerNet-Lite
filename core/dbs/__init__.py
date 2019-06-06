@@ -1,6 +1,7 @@
 from .coco import COCO
-
+from .retail import RETAIL
 datasets = {
-    "COCO": COCO
+    "COCO": COCO,
+    "RETAIL":RETAIL
 }
 
